@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bcg_setup_edit_text">
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/nameTextField"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            tools:text="Some name"
+
+            style = "@style/App.TextField.Text.TextWithIcon"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/smileIcon"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            tools:ignore="Autofill,LabelFor"/>
+
+    <ImageView
+            android:id="@+id/smileIcon"
+
+            android:layout_width="@dimen/textEditIconSize"
+            android:layout_height="@dimen/textEditIconSize"
+
+            app:srcCompat="@drawable/ic_smile"
+            app:tint = "@color/darkGray"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nameTextField"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_marginStart="@dimen/textEditIconMargin"
+            android:layout_marginEnd="@dimen/textEditIconMargin"
+
+            tools:ignore="ContentDescription"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

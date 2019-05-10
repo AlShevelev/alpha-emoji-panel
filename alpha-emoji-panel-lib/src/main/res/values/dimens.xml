@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="popupEmojiComplexPadding">5dp</dimen>
+    <dimen name="popupEmojiComplexItemSize">50dp</dimen>
+
+    <dimen name="popupEmojiRecentHeight">40dp</dimen>
+    <dimen name="popupEmojiRecentAreaSizeMargin">7dp</dimen>
+
+    <dimen name="popupEmojiGeneralBottom">4dp</dimen>
+    <dimen name="popupEmojiGeneralAreaTopMargin">8dp</dimen>
+
+    <dimen name="popupEmojiKeysHeight">40dp</dimen>
+    <dimen name="popupEmojiSpaceKeysMargin">8dp</dimen>
+    <dimen name="popupEmojiKeysSize">40dp</dimen>
+    <dimen name="popupEmojiBackKeysVerticalPadding">10dp</dimen>
+    <dimen name="popupEmojiBackKeysHorizontal">7dp</dimen>
+
+    <dimen name="popupEmojiIconSize">25sp</dimen>
+</resources>

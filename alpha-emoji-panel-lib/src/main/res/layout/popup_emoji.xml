@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:animateLayoutChanges="true"
+
+    android:background="@color/emojiLightGray"
+    tools:ignore="Overdraw">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentList"
+
+        android:layout_width="0dp"
+        android:layout_height="@dimen/popupEmojiRecentHeight"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:background="@color/emojiGray"
+
+    />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/generalList"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintTop_toBottomOf="@+id/recentList"
+
+        android:layout_marginBottom="@dimen/popupEmojiGeneralBottom"
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/guidelineBottom"
+
+        app:layout_constraintGuide_end="@dimen/popupEmojiKeysHeight"
+        android:orientation="horizontal"/>
+
+    <Button
+        android:id="@+id/spaceButton"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:background="@drawable/bcg_space_bar"
+        style="?android:attr/borderlessButtonStyle"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintEnd_toStartOf="@+id/backButton"
+
+        android:layout_marginTop="@dimen/popupEmojiSpaceKeysMargin"
+        android:layout_marginBottom="@dimen/popupEmojiSpaceKeysMargin"
+        android:layout_marginEnd="@dimen/popupEmojiSpaceKeysMargin"
+        android:layout_marginStart="@dimen/popupEmojiSpaceKeysMargin"/>
+
+    <ImageButton
+        android:id="@+id/homeButton"
+
+        android:layout_width="@dimen/popupEmojiKeysSize"
+        android:layout_height="@dimen/popupEmojiKeysSize"
+
+        android:background="@null"
+        app:srcCompat="@drawable/ic_home"
+        app:tint = "@color/main_buttons"
+
+        android:visibility="gone"
+        tools:visibility="visible"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <ImageButton
+        android:id="@+id/backButton"
+
+        android:layout_width="@dimen/popupEmojiKeysSize"
+        android:layout_height="@dimen/popupEmojiKeysSize"
+
+        android:background="@null"
+        app:srcCompat="@drawable/ic_backspace"
+        app:tint = "@color/main_buttons"
+        android:scaleType="fitXY"
+
+        android:paddingTop="@dimen/popupEmojiBackKeysVerticalPadding"
+        android:paddingBottom="@dimen/popupEmojiBackKeysVerticalPadding"
+        android:paddingStart="@dimen/popupEmojiBackKeysHorizontal"
+        android:paddingEnd="@dimen/popupEmojiBackKeysHorizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineBottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ContentDescription"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
