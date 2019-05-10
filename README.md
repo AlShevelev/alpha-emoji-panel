@@ -7,7 +7,7 @@
  - Unconventional splitting of icons into groups.
 
 ## Screenshots
- In your application it looks like this:
+ In your application it looks like this:  
  ![Screenshot 1](https://github.com/AlShevelev/alpha-emoji-panel/blob/master/screenshots/1.png)
  ![Screenshot2](https://github.com/AlShevelev/alpha-emoji-panel/blob/master/screenshots/2.png)
 ![Screenshot3](https://github.com/AlShevelev/alpha-emoji-panel/blob/master/screenshots/3.png) 
