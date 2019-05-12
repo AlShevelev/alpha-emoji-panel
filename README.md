@@ -1,5 +1,7 @@
 # Alpha emoji panel
 
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Alpha%20emoji%20panel-green.svg?style=flat )]( https://android-arsenal.com/details/1/7654 )
+
 **Alpha emoji panel** is simple to use, open-source emoji keyboard for Android. The main features are: 
  - Landscape screen orientation is supported;
  - Recent emojies list (up to 50 last used emojies);
