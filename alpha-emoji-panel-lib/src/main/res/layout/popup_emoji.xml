@@ -11,6 +11,19 @@
     android:background="@color/emojiLightGray"
     tools:ignore="Overdraw">
 
+    <View
+        android:id="@+id/topBorder"
+
+        android:layout_width="0dp"
+        android:layout_height="@dimen/popupEmojiBorderThickness"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:background="@android:color/black"
+    />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recentList"
 
@@ -19,10 +32,9 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBorder"
 
         android:background="@color/emojiGray"
-
     />
 
     <androidx.recyclerview.widget.RecyclerView

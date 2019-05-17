@@ -16,4 +16,6 @@
     <dimen name="popupEmojiBackKeysHorizontal">7dp</dimen>
 
     <dimen name="popupEmojiIconSize">25sp</dimen>
+
+    <dimen name="popupEmojiBorderThickness">1dp</dimen>
 </resources>
