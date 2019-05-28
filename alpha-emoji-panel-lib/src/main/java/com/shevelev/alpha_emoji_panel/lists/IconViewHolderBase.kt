@@ -12,9 +12,6 @@ import com.shevelev.alpha_emoji_panel.dto.TouchPoint
 import com.shevelev.alpha_emoji_panel.icons_in_lists.IconInGrid
 import com.shevelev.alpha_emoji_panel.popup.IconActions
 
-/**
- *
- */
 abstract class IconViewHolderBase(
     context: Context,
     parentView: ViewGroup,

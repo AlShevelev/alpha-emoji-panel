@@ -25,16 +25,10 @@ object EmojiInitializer {
         val config = FontRequestEmojiCompatConfig(context, fontRequest).setReplaceAll(true)
 
         EmojiCompat.init(config).registerInitCallback(object: EmojiCompat.InitCallback(){
-            /**
-             *
-             */
             override fun onInitialized() {
                 Log.d("EMOJI", "initialized")
             }
 
-            /**
-             *
-             */
             override fun onFailed(throwable: Throwable?) {
                 Log.d("EMOJI", "failed: ${throwable?.message}")
             }

@@ -15,9 +15,6 @@ class RecentIconsStorage {
         private const val CODE_POINTS_SPLITTER = "|"
     }
 
-    /**
-     *
-     */
     fun load(context: Context): List<Emoji> =
         try {
             getPreferences(context)
@@ -30,9 +27,6 @@ class RecentIconsStorage {
             listOf()
         }
 
-    /**
-     *
-     */
     fun save(context: Context, icons: List<Emoji>) =
         try {
             getPreferences(context)
@@ -43,9 +37,6 @@ class RecentIconsStorage {
             ex.printStackTrace()
         }
 
-    /**
-     *
-     */
     private fun iconsToString(icons: List<Emoji>): String =
         icons.joinToString(ICONS_SPLITTER) { icon ->
             icon.codePoints.joinToString(CODE_POINTS_SPLITTER) { codePoint ->
@@ -53,9 +44,6 @@ class RecentIconsStorage {
             }
         }
 
-    /**
-     *
-     */
     private fun iconsFromString(source: String): List<Emoji> =
         if(source == "") {
             listOf()
@@ -72,8 +60,5 @@ class RecentIconsStorage {
                 }
         }
 
-    /**
-     *
-     */
     private fun getPreferences(context: Context) = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
 }

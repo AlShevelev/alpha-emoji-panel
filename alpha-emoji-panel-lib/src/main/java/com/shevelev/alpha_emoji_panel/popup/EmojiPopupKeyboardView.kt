@@ -25,31 +25,16 @@ constructor(
     val recentListView: RecyclerView
     get() = recentList
 
-    /**
-     *
-     */
     init {
         inflate(context, R.layout.popup_emoji, this)
     }
 
-    /**
-     *
-     */
     fun setOnClickListenerHomeButton(listener: OnClickListener?) = homeButton.setOnClickListener(listener)
 
-    /**
-     *
-     */
     fun setOnClickListenerBackButton(listener: OnClickListener?) = backButton.setOnClickListener(listener)
 
-    /**
-     *
-     */
     fun setOnClickListenerSpaceButton(listener: OnClickListener?) = spaceButton.setOnClickListener(listener)
 
-    /**
-     *
-     */
     fun setHomeButtonVisibility(isVisible: Boolean) {
         homeButton.visibility = if (isVisible) View.VISIBLE else View.GONE
     }

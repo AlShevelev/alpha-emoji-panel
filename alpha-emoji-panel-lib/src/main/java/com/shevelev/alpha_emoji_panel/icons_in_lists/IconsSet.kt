@@ -10,8 +10,5 @@ class IconsSet(
     private val icons: List<IconInGrid>
 ) : GroupIconInGrid {
 
-    /**
-     *
-     */
     override fun getChildIcons(): List<IconInGrid> = icons
 }

@@ -7,9 +7,7 @@ import java.lang.UnsupportedOperationException
  * Creates full set of icons
  */
 class RootIcons: GroupIconInGrid {
-    /**
-     *
-     */
+
     private val rootIcons: List<GroupIconInGrid> by lazy {
         val result = mutableListOf<GroupIconInGrid>()
 
@@ -488,14 +486,8 @@ class RootIcons: GroupIconInGrid {
         result
     }
 
-    /**
-     *
-     */
     override fun getChildIcons(): List<IconInGrid> = rootIcons
 
-    /**
-     *
-     */
     override val icon: Emoji
-        get() = throw UnsupportedOperationException("The icon is not supported for this entity")
+    get() = throw UnsupportedOperationException("The icon is not supported for this entity")
 }

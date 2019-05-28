@@ -33,18 +33,12 @@ object UIHelper {
         return Size(metrics.widthPixels, metrics.heightPixels)
     }
 
-    /**
-     *
-     */
     fun getScreenOrientation(context: Context): ScreenOrientation =
         getScreenSize(context)
             .let { size ->
                 if(size.width > size.height) ScreenOrientation.LANDSCAPE else ScreenOrientation.PORTRAIT
             }
 
-    /**
-     *
-     */
     fun setSoftKeyboardVisibility(context: Context, someViewInWindow: View, isVisible: Boolean) {
         if (isVisible) {
             someViewInWindow.post(KeyboardVisibilityRunnable(context, someViewInWindow))

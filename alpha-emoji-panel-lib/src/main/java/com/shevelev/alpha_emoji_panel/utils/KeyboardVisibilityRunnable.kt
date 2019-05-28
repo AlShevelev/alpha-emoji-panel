@@ -18,9 +18,6 @@ class KeyboardVisibilityRunnable(
 
     private val waitInterval = 100L     // ms
 
-    /**
-     *
-     */
     override fun run() {
         if (context == null || targetView == null) {
             return

@@ -6,9 +6,6 @@ import com.shevelev.alpha_emoji_panel.icons_in_lists.SimpleIcon
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/**
- *
- */
 class RecentIconsCollection {
     private var _icons = mutableListOf<IconInGrid>()
 
@@ -22,9 +19,6 @@ class RecentIconsCollection {
     val icons: List<IconInGrid>
     get() = _icons
 
-    /**
-     *
-     */
     suspend fun load(context: Context) {
         withContext(Dispatchers.IO) {
             synchronized(this@RecentIconsCollection) {
@@ -39,9 +33,6 @@ class RecentIconsCollection {
         }
     }
 
-    /**
-     *
-     */
     suspend fun save(context: Context) {
         withContext(Dispatchers.IO) {
             synchronized(this@RecentIconsCollection) {

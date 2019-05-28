@@ -33,9 +33,6 @@ class EmojiPopupComplexIcon(
     private val iconsListAdapter: ComplexIconsAdapter
     private val iconsList: RecyclerView
 
-    /**
-     *
-     */
     init {
         // Create view
         @SuppressLint("InflateParams")
@@ -62,9 +59,6 @@ class EmojiPopupComplexIcon(
         iconsList.layoutManager = GridLayoutManager(context, iconToShow.getChildIcons().size)
     }
 
-    /**
-     *
-     */
     override fun onIconClick(icon: IconInGrid, touchPoint: TouchPoint) {
         dismiss()
         parentActionsHandler.onIconClick(icon, touchPoint)
@@ -78,9 +72,6 @@ class EmojiPopupComplexIcon(
         height = size.height
     }
 
-    /**
-     *
-     */
     private fun calculateSize(context: Context, iconsQuantity: Int): Size {
         val iconSize = UIHelper.getDimension(context, R.dimen.popupEmojiComplexItemSize)
         val popupPadding = UIHelper.getDimension(context, R.dimen.popupEmojiComplexPadding)
@@ -88,9 +79,6 @@ class EmojiPopupComplexIcon(
         return Size(iconsQuantity * iconSize + popupPadding * 2, iconSize + popupPadding * 2)
     }
 
-    /**
-     *
-     */
     private fun calculatePosition(context: Context, size: Size, touchPoint: TouchPoint): Point {
         val y = touchPoint.absolute.y - touchPoint.inView.y - size.height
 

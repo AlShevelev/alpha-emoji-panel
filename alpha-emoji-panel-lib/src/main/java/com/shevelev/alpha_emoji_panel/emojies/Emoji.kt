@@ -4,22 +4,14 @@ import androidx.emoji.text.EmojiCompat
 import com.shevelev.alpha_emoji_panel.utils.MurmurHash
 import java.nio.ByteBuffer
 
-/**
- *
- */
 class Emoji(vararg val codePoints: Int) {
+
     companion object {
         private val core = EmojiCompat.get()
     }
 
-    /**
-     *
-     */
     fun isValid(): Boolean = codePointToChars().isValid()
 
-    /**
-     *
-     */
     fun toEmoji(): CharSequence? {
         val chars = codePointToChars()
         return if(chars.isValid()) {
@@ -29,9 +21,6 @@ class Emoji(vararg val codePoints: Int) {
         }
     }
 
-    /**
-     *
-     */
     override fun hashCode(): Int =
         if(codePoints.size == 1) {
             codePoints[0]
@@ -47,18 +36,9 @@ class Emoji(vararg val codePoints: Int) {
                 }
         }
 
-    /**
-     *
-     */
     override fun equals(other: Any?): Boolean = other?.let { it === this || it.hashCode() == hashCode() } ?: false
 
-    /**
-     *
-     */
     private fun codePointToChars(): CharSequence = String(codePoints, 0, codePoints.size)
 
-    /**
-     *
-     */
     private fun CharSequence.isValid() = core.hasEmojiGlyph(this)
 }
