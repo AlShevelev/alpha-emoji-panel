@@ -7,33 +7,20 @@ import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatEditText
 import com.shevelev.alpha_emoji_panel.popup.EmojiPopupKeyboard
 import com.shevelev.alpha_emoji_panel.utils.UIHelper
-import java.util.*
 
 class EmojiActions
 constructor(
     private val context: Context,
     rootView: View,
     private val emojiButton: ImageView,
-    vararg emojiEditTextViews: AppCompatEditText
-) : View.OnFocusChangeListener {
+    private val emojiEditText: AppCompatEditText) {
 
     private val popup: EmojiPopupKeyboard = EmojiPopupKeyboard(rootView, context)
 
     private val keyBoardIcon = R.drawable.ic_keyboard
     private val smileyIcons = R.drawable.ic_smile
 
-    private val emojiEditTextList = ArrayList<AppCompatEditText>()
-    private lateinit var emojiEditText: AppCompatEditText
-
-    init {
-        addEmojiEditTextList(emojiEditTextViews)
-    }
-
     fun setUpEmojiKeyboard() {
-        if (!::emojiEditText.isInitialized) {
-            emojiEditText = emojiEditTextList[0]
-        }
-
         //Will automatically set size according to the soft keyboard size
         popup.calculateSize()
 
@@ -75,26 +62,25 @@ constructor(
         showForEditText()
     }
 
-    override fun onFocusChange(v: View?, hasFocus: Boolean) {
-        if (hasFocus && v is AppCompatEditText) {
-            emojiEditText = v
-        }
-    }
-
     fun hide() {
         if (popup.isShowing) {
             popup.dismiss()
         }
     }
 
-    fun setOnKeyboardOpenListener(listener: (() -> Unit)?) = popup.setOnOpenListener(listener)
+    fun setOnKeyboardOpenListener(listener: (() -> Unit)?) {
+        if(listener == null) {
+            popup.setOnOpenListener(listener)
+        } else {
+            popup.setOnOpenListener {
+                emojiEditText.requestFocus()
+                listener()
+            }
+        }
+    }
 
     private fun showForEditText() {
         emojiButton.setOnClickListener {
-            if (!::emojiEditText.isInitialized) {
-                emojiEditText = emojiEditTextList[0]
-            }
-
             //If popup is not showing => emoji keyboard is not visible, we need to show it
             //else, open the text keyboard first and immediately after that show the emoji popup
             if (!popup.isShowing) {
@@ -125,12 +111,4 @@ constructor(
 
     private fun changeEmojiKeyboardIcon(iconToBeChanged: ImageView, drawableResourceId: Int) =
         iconToBeChanged.setImageResource(drawableResourceId)
-
-    private fun addEmojiEditTextList(emojiEditTextViews: Array<out AppCompatEditText>) {
-        Collections.addAll(emojiEditTextList, *emojiEditTextViews)
-
-        for (editText in emojiEditTextViews) {
-            editText.onFocusChangeListener = this
-        }
-    }
 }
